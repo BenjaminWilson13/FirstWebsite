@@ -13,6 +13,9 @@ a:active {
   color: white;
 }
 
+p {
+  text-align: center;
+}
 .navigationBar {
   margin-left: auto;
   margin-right: auto;
