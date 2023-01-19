@@ -1,3 +1,18 @@
+a:link {
+  color: white;
+  text-decoration: none;
+
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: red;
+}
+a:active {
+  color: white;
+}
+
 .navigationBar {
   margin-left: auto;
   margin-right: auto;
@@ -7,7 +22,7 @@
 }
 
 body {
-  width: fit-content;
+  width: 700px;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -22,27 +37,57 @@ fieldset {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-sizing: inset 5px 3px 5px red;
+  box-shadow: 5px 3px 5px red, -5px -3px 5px red;
+  border: 0;
+  border-radius: 10px;
+  background-color: rgb(43, 43, 43);
 }
 
+img {
+  box-shadow: 5px 5px 3px white, -5px -5px 3px white;
+  border-radius: 3px;
+
+}
+
+label {
+  margin-top: 20px;
+}
 .navButtons {
   display: flex;
   background-color: silver;
   width: max-content;
   padding: 25px;
+  margin: 5px;
   height: max-content;
   align-items: center;
   justify-content: center;
-  color: red;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 5px;
 }
 
 .textDiv{
   display: flex;
-  width: min-content;
+  width: 680px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: rgb(43, 43, 43);
   box-shadow: inset 5px 3px 5px red;
   padding: 10px;
+}
+
+.pictureBox {
+  width: 901px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 10fr 1fr 10fr;
+  align-items:flex-start;
+  object-fit: cover;
+  justify-items: center;
+}
+
+.pictureFrame {
+  padding: 0;
+  margin: 20px;
+  border: 0;
 }
