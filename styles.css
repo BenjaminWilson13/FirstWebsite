@@ -1,0 +1,48 @@
+.navigationBar {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+body {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(49, 49, 49);
+  color: white;
+}
+
+fieldset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: inset 5px 3px 5px red;
+}
+
+.navButtons {
+  display: flex;
+  background-color: silver;
+  width: max-content;
+  padding: 25px;
+  height: max-content;
+  align-items: center;
+  justify-content: center;
+  color: red;
+}
+
+.textDiv{
+  display: flex;
+  width: min-content;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(43, 43, 43);
+  box-shadow: inset 5px 3px 5px red;
+  padding: 10px;
+}

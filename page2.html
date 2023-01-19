@@ -2,22 +2,40 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <link type="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
     <div class="navigationBar">
-      <a href="index.html">Home</a>
-      <a href="page2.html">Page 2</a>
-      <a href="page3.html">Page 3</a>
-      <a href="page4.html">Page 4</a>
+      <div class="navButtons">
+        <a href="index.html">Home</a>
+      </div>
+      <div class="navButtons">
+        <a href="page2.html">Page 2</a>
+      </div>
+      <div class="navButtons">
+        <a href="page3.html">Page 3</a>
+      </div>
+      <div class="navButtons">
+        <a href="page4.html">Page 4</a>
+      </div>
     </div>
-    <form>
+    <form action="/form-handling-url" method="post">
       <fieldset>
-        <input type="text">
-        <input type="text">
-        <input type="checkbox">
+        <legend>Guest Book</legend>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="first_name">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="last_name">
+
+        <label for="yep">Yep:</label>
+        <input type="checkbox" id="yep" name="dunno_what_to_use_this_for">
         <textarea></textarea>
+        <div>
+          <button type="submit">Sign!</button>
+          <button type="reset">Reset!</button>
+        </div>
       </fieldset>
     </form>
 
