@@ -82,8 +82,10 @@ const server = http.createServer((request, response) => {
             }
 
         }
-        console.log(requestBody);
-        response.end();
+
+        response.statusCode = 404; 
+        response.setHeader('Content-Type', 'text/html'); 
+        response.end(fs.readFileSync('./index.html', 'utf-8'));
     }); 
 });
 
