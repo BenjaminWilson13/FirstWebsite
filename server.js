@@ -2,6 +2,8 @@ const http = require('http');
 const fs = require('fs'); 
 const { url } = require('inspector');
 
+const signed = []; 
+
 const server = http.createServer((request, response) => {
     console.log(request.method, request.url)
     console.log('linebreak~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
@@ -43,27 +45,33 @@ const server = http.createServer((request, response) => {
             }
 
             if (request.url === '/page2.html') {
-                const cssReturn = fs.readFileSync('./page2.html', 'utf-8'); 
+                let htmlReturn = fs.readFileSync('./page2.html', 'utf-8'); 
                 response.statusCode = 200; 
                 response.setHeader('Content-Type', 'text/html'); 
-                response.write(cssReturn); 
+                
+                let guestList = ''; 
+                console.log(signed); 
+                for (let element of signed) {
+                    guestList += `<li>First Name: ${element.first_name}     Last Name: ${element.last_name} <ul> <li>Some Text: ${element.description}</li></ul></li>`
+                }
+                htmlReturn = htmlReturn.replace('#{signee}', guestList); 
+                response.write(htmlReturn); 
                 return response.end(); 
             }
 
             if (request.url === '/page3.html') {
-                const cssReturn = fs.readFileSync('./page3.html', 'utf-8'); 
+                const htmlReturn = fs.readFileSync('./page3.html', 'utf-8'); 
                 response.statusCode = 200; 
                 response.setHeader('Content-Type', 'text/html'); 
-                response.write(cssReturn); 
+                response.write(htmlReturn); 
                 return response.end(); 
-                
             }
 
             if (request.url === '/page4.html') {
-                const cssReturn = fs.readFileSync('./page4.html', 'utf-8'); 
+                const htmlReturn = fs.readFileSync('./page4.html', 'utf-8'); 
                 response.statusCode = 200; 
                 response.setHeader('Content-Type', 'text/html'); 
-                response.write(cssReturn); 
+                response.write(htmlReturn); 
                 return response.end(); 
             }
 
@@ -80,7 +88,15 @@ const server = http.createServer((request, response) => {
                 response.write(imageReturn); 
                 return response.end(); 
             }
+        }
 
+        if (request.method === 'POST') {
+            if (request.url === '/signBook') {
+                signed.push(request.body); 
+                response.statusCode = 302; 
+                response.setHeader('Location', '/page2.html'); 
+                return response.end(); 
+            }
         }
 
         response.statusCode = 404; 

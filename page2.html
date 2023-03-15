@@ -28,7 +28,7 @@
         </div>
       </a>
     </div>
-    <form action="/form-handling-url" method="post">
+    <form action="/signBook" method="post">
       <fieldset>
         <legend>Guest Book</legend>
         <label for="firstName">First Name:</label>
@@ -39,7 +39,7 @@
 
         <label for="yep">Yep:</label>
         <input type="checkbox" id="yep" name="dunno_what_to_use_this_for">
-        <textarea></textarea>
+        <textarea name="description"></textarea>
         <div>
           <button type="submit">Sign!</button>
           <button type="reset">Reset!</button>
@@ -47,6 +47,11 @@
       </fieldset>
     </form>
 
+
+    <h3>People who've signed:</h3>
+    <ul>
+      #{signee}
+    </ul>
 
 
   </body>
