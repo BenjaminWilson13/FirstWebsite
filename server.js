@@ -93,6 +93,14 @@ const server = http.createServer((request, response) => {
                 return response.end();
             }
 
+            if (request.url === '/images' || request.url === '/images.html') {
+                response.statusCode = 404; 
+                response.setHeader('Content-Type', 'text/html'); 
+                htmlReturn = fs.readFileSync('./index.html', 'utf-8'); 
+                response.write(htmlReturn); 
+                return response.end(); 
+            }
+
             const urlSplit = request.url.split('/');
             urlSplit.splice(0, 1);
             console.log(urlSplit);
