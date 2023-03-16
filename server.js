@@ -11,6 +11,7 @@ const server = http.createServer((request, response) => {
         requestBody += data;
     });
     request.on('end', () => {
+        console.log(request.headers); 
         if (requestBody) {
             request.body = requestBody
                 .split("&")
