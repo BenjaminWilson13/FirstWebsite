@@ -11,8 +11,8 @@ const server = http.createServer((request, response) => {
         requestBody += data;
     });
     request.on('end', () => {
-        console.log(request.headers); 
         if (requestBody) {
+            console.log(request.headers['content-type']); 
             request.body = requestBody
                 .split("&")
                 .map((keyValuePair) => keyValuePair.split("="))
