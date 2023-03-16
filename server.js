@@ -3,17 +3,13 @@ const fs = require('fs');
 const { url } = require('inspector');
 
 const signed = [];
+let visitors = 1; 
 
 const server = http.createServer((request, response) => {
-    console.log(request.method, request.url)
-    console.log('linebreak~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-
     let requestBody = '';
     request.on('data', (data) => {
-        console.log(request.method, request.url, 'asdf');
         requestBody += data;
     });
-    console.log(requestBody);
     request.on('end', () => {
         if (requestBody) {
             request.body = requestBody
@@ -29,6 +25,8 @@ const server = http.createServer((request, response) => {
 
         if (request.method === 'GET') {
             if (request.url === '/' || request.url === '/index.html') {
+                currentDate = new Date(); 
+                console.log(`${currentDate} - Index page visit.`)
                 const htmlReturn = fs.readFileSync('./index.html', 'utf-8');
                 response.statusCode = 200;
                 response.setHeader('Content-Type', 'text/html');
@@ -45,12 +43,13 @@ const server = http.createServer((request, response) => {
             }
 
             if (request.url === '/page2.html') {
+                currentDate = new Date(); 
+                console.log(`${currentDate} - Page2 visit.`)
                 let htmlReturn = fs.readFileSync('./page2.html', 'utf-8');
                 response.statusCode = 200;
                 response.setHeader('Content-Type', 'text/html');
 
                 let guestList = '';
-                console.log(signed);
                 let firstname = ''; 
                 let lastname = ''; 
                 let text = ''; 
@@ -78,6 +77,8 @@ const server = http.createServer((request, response) => {
             }
 
             if (request.url === '/page3.html') {
+                currentDate = new Date(); 
+                console.log(`${currentDate} - Page3 visit.`)
                 const htmlReturn = fs.readFileSync('./page3.html', 'utf-8');
                 response.statusCode = 200;
                 response.setHeader('Content-Type', 'text/html');
@@ -86,6 +87,8 @@ const server = http.createServer((request, response) => {
             }
 
             if (request.url === '/page4.html') {
+                currentDate = new Date(); 
+                console.log(`${currentDate} - Page4 visit.`)
                 const htmlReturn = fs.readFileSync('./page4.html', 'utf-8');
                 response.statusCode = 200;
                 response.setHeader('Content-Type', 'text/html');
@@ -103,13 +106,11 @@ const server = http.createServer((request, response) => {
 
             const urlSplit = request.url.split('/');
             urlSplit.splice(0, 1);
-            console.log(urlSplit);
 
             if (urlSplit[0] === 'images') {
                 response.statusCode = 200;
                 response.setHeader('Content-Type', 'image/jpg')
                 interpoBoi = urlSplit.join('/')
-                console.log(interpoBoi);
                 const imageReturn = fs.readFileSync(`./${interpoBoi}`);
                 response.write(imageReturn);
                 return response.end();
@@ -118,6 +119,8 @@ const server = http.createServer((request, response) => {
 
         if (request.method === 'POST') {
             if (request.url === '/signBook') {
+                currentDate = new Date(); 
+                console.log(`${currentDate} - Signed Book`)
                 signed.push(request.body);
                 response.statusCode = 302;
                 response.setHeader('Location', '/page2.html');
