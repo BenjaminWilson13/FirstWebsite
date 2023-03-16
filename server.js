@@ -6,7 +6,7 @@ const signed = [];
 let visitors = 1; 
 
 const server = http.createServer((request, response) => {
-    console.log(request.headers)
+    // console.log(request.headers) //BEEEEG CHUNK
     let requestBody = '';
     request.on('data', (data) => {
         requestBody += data;
