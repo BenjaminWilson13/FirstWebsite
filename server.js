@@ -127,8 +127,17 @@ const server = http.createServer((request, response) => {
 
         if (request.method === 'POST') {
             if (request.url === '/signBook') {
-                currentDate = new Date(); 
+                currentDate = new Date();
                 console.log(`${currentDate} - Signed Book`)
+                if (request.body.first_name === undefined) {
+                    request.body.first_name = 'not provided'; 
+                }
+                if (request.body.last_name === undefined) {
+                    request.body.last_name = 'not provided'; 
+                }
+                if (request.body.description === undefined) {
+                    request.body.description = 'not provided'; 
+                }
                 signed.push(request.body);
                 response.statusCode = 302;
                 response.setHeader('Location', '/page2.html');
