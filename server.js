@@ -36,7 +36,7 @@ const server = http.createServer((request, response) => {
                 currentDate = new Date(); 
                 console.log(`${currentDate} - Index page visit.`)
                 const htmlReturn = fs.readFileSync('./index.html', 'utf-8');
-                response.statusCode = 200;
+                response.statusCode = 418;
                 response.setHeader('Content-Type', 'text/html');
                 response.write(htmlReturn);
                 return response.end();
