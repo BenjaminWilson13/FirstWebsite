@@ -14,7 +14,9 @@ const server = http.createServer((request, response) => {
     request.on('end', () => {
         if (requestBody) {
             console.log(request.headers['content-type']); 
-            request.body = requestBody
+            if (request.headers['content-type'] === 'application/x-www-form-urlencoded'){
+
+                request.body = requestBody
                 .split("&")
                 .map((keyValuePair) => keyValuePair.split("="))
                 .map(([key, value]) => [key, value.replace(/\+/g, " ")])
@@ -23,6 +25,7 @@ const server = http.createServer((request, response) => {
                     acc[key] = value;
                     return acc;
                 }, {});
+            }
         }
 
         if (request.method === 'GET') {
