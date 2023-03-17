@@ -25,6 +25,9 @@ const server = http.createServer((request, response) => {
                     acc[key] = value;
                     return acc;
                 }, {});
+            } 
+            else if (request.headers['content-type'] === 'application/json') {
+                request.body = JSON.parse(requestBody); 
             }
         }
 
