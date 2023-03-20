@@ -24,10 +24,10 @@ p {
 .navigationBar {
   margin-top: 35px; 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   width: 100%; 
-  gap: 45px; 
+  gap: 15px; 
 
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
@@ -116,4 +116,15 @@ footer {
   border: 2px solid gray;
   border-radius: 2px;
   padding: 0 20px; 
+}
+
+.weather-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  color: white;
+  margin-top: 25px;
+  background-color: black;
+  padding: 25px;
+  width: 100%;
 }
