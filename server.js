@@ -142,6 +142,14 @@ const server = http.createServer((request, response) => {
                 response.write(htmlReturn);
                 return response.end();
             }
+
+            if (request.method === 'GET' && request.url === '/favicon.ico') {
+                let iconReturn = fs.readFileSync('./icon.png');
+                response.statusCode = 200;
+                response.setHeader('Content-Type', 'image/png');
+                response.write(iconReturn);
+                return response.end();
+              }
         }
 
         if (request.method === 'POST') {
