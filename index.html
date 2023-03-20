@@ -1,77 +1,86 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="/favicon.ico" type="image/png">
-    <title>Home</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="/favicon.ico" type="image/png">
+  <title>Home</title>
+</head>
 
-  <body>
-    <div class="navigationBar">
-      <a href="index.html">
-        <div class="navButtons">
-          Home
-        </div>
-      </a>
-      <a href="page2.html">
-        <div class="navButtons">
-          Guestbook
-        </div>
-      </a>
-      <a href="page3.html">
-        <div class="navButtons">
-          Links
-        </div>
-      </a>
-      <a href="page4.html">
-        <div class="navButtons">
-          Gallery of Builds
-        </div>
-      </a>
-      <a href="weather.html">
-        <div class="navButtons">
-          Weather
-        </div>
-      </a>
-    </div>
-    <div class="textDiv">
-      <h1>Welcome to my Website!</h1>
+<body>
+  <div class="navigationBar">
+    <a href="index.html">
+      <div class="navButtons">
+        Home
+      </div>
+    </a>
+    <a href="page2.html">
+      <div class="navButtons">
+        Guestbook
+      </div>
+    </a>
+    <a href="page3.html">
+      <div class="navButtons">
+        Links
+      </div>
+    </a>
+    <a href="page4.html">
+      <div class="navButtons">
+        Gallery of Builds
+      </div>
+    </a>
+    <a href="weather.html">
+      <div class="navButtons">
+        Weather
+      </div>
+    </a>
+  </div>
+  <div class="textDiv">
+    <h1>Welcome to my Website!</h1>
 
-      <h2>Here's a little info about myself</h2>
+    <h2>Here's a little info about myself</h2>
 
-        <p>
-          I was a truck driver for 8 years until heal issues made it impossible to continue. I tried out a job working
-          at Carrier (the AC company) but the culture there was toxic. Then I tried being a work from home call center
-          represenative but figured out pretty quickly that
-          wasn't the carrer path for me.
-        </p>
-        <h2>The main topic: My Computer building hobby</h2>
-        <p>
-          My main hobby has always building computers. I had an early interest in programming but lacked the modivation
-          to persue it. Hardware was much more accessable in terms of learning for me.
-        </p>
-        <p>
-          Below is a picture of my current computer. It's performance sits on the "enthusiast" end of the spectrum.
-        </p>
+    <p>
+      I was a truck driver for 8 years until heal issues made it impossible to continue. I tried out a job working
+      at Carrier (the AC company) but the culture there was toxic. Then I tried being a work from home call center
+      represenative but figured out pretty quickly that
+      wasn't the carrer path for me.
+    </p>
+    <h2>The main topic: My Computer building hobby</h2>
+    <p>
+      My main hobby has always building computers. I had an early interest in programming but lacked the modivation
+      to persue it. Hardware was much more accessable in terms of learning for me.
+    </p>
+    <p>
+      Below is a picture of my current computer. It's performance sits on the "enthusiast" end of the spectrum.
+    </p>
 
-      <a href="images/currentComputerConfig.jpg" target="_blank"><img src="images/currentComputerConfig.jpg" alt="A picture of a computer in a glass case with many red lights"></a>
-      <h2>Non-exhaustive list of specs</h2>
-      <p>
-        The case is a Core P5 from Thermaltake with cooling from Corsair. The CPU is an Intel i9 12900KF backed by
-        32GB of DDR5 ram. An EVGA 3080 provides 3D graphics prosessing.
-      </p>
-    </div>
-    <footer>
-      <h3>Updates!</h3>
-      <p>Fixed some issues which allowed users to post HTML into page2 (Guestbook). Now it just removes any '<' or '>' which pretty much breaks any HTML.</p>
-      <p>I've been working on various improvements to the server code. Up until now if a client tried to send a .XML to my server, it'd just crash outright. That /should/ be fixed now. </p>
-      <p>Note: Haven't made a 404 page so far so if you do something the server doesn't like, it 404's then gives you the home page. Didn't want to flashbang anyone with a stark white 404 screen.</p>
-      <p>Fixed JSON submission. If the wrong keys are used or no keys are present, it'll just sign with 'not provided' in the missing/incorrect fields</p>
-      <p>Added some calles to a Weather API. Can put in your city, zip, state and get some current weather info back. It's currently really ugly but I'll clean it up eventually.</p>
-    </footer>
+    <a href="images/currentComputerConfig.jpg" target="_blank"><img src="images/currentComputerConfig.jpg"
+        alt="A picture of a computer in a glass case with many red lights"></a>
+    <h2>Non-exhaustive list of specs</h2>
+    <p>
+      The case is a Core P5 from Thermaltake with cooling from Corsair. The CPU is an Intel i9 12900KF backed by
+      32GB of DDR5 ram. An EVGA 3080 provides 3D graphics prosessing.
+    </p>
+  </div>
+  <footer>
+    <h3>Updates!</h3>
+    <p>Fixed some issues which allowed users to post HTML into page2 (Guestbook). Now it just removes any '<' or '>'
+        which pretty much breaks any HTML.</p>
+        <p>I've been working on various improvements to the server code. Up until now if a client tried to send a .XML
+          to my server, it'd just crash outright. That /should/ be fixed now. </p>
+        <p>Note: Haven't made a 404 page so far so if you do something the server doesn't like, it 404's then gives you
+          the home page. Didn't want to flashbang anyone with a stark white 404 screen.</p>
+        <p>Fixed JSON submission. If the wrong keys are used or no keys are present, it'll just sign with 'not provided'
+          in the missing/incorrect fields</p>
+        <p>Added some calles to a Weather API. Can put in your city, zip, state and get some current weather info back.
+          It's currently really ugly but I'll clean it up eventually.</p>
+  </footer>
 
-  </body>
+</body>
 
 </html>
