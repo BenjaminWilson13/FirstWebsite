@@ -3,6 +3,7 @@ const fs = require('fs');
 const { url } = require('inspector');
 const fetch = require("node-fetch");
 let APIreply = {};
+// import { getTheCat } from './pictureGeneration';
 
 const signed = [];
 let visitors = 1;
@@ -149,7 +150,31 @@ const server = http.createServer((request, response) => {
                 response.setHeader('Content-Type', 'image/png');
                 response.write(iconReturn);
                 return response.end();
-              }
+            }
+
+            console.log(request.url); 
+
+            if (request.method === 'GET' && request.url === '/scripts.js') {
+                let scriptReturn = fs.readFileSync('./scripts.js', 'utf-8'); 
+                response.statusCode = 200; 
+                response.setHeader('Content-Type', 'text/javascript'); 
+                response.write(scriptReturn); 
+                return response.end(); 
+            }
+
+            if (request.method === 'GET' && request.url === '/catPics.html') {
+                let htmlReturn = fs.readFileSync('./catPics.html', 'utf-8'); 
+                response.statusCode = 200; 
+                response.setHeader('Content-Type', 'text/html'); 
+                response.write(htmlReturn); 
+                return response.end(); 
+            }
+
+            if (request.method === 'GET' && request.url === '/catpic.png') {
+                response.statusCode = 200; 
+                response.setHeader('Content-Type', 'image/png'); 
+                response.write(getTheCat()); 
+            }
         }
 
         if (request.method === 'POST') {
